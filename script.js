@@ -1,9 +1,9 @@
 const startButton = document.querySelector(".start-btn")
 const questionContainerElement = document.getElementById(".question-container")
 const questionElement = document.getElementById('question')
-let shuffledQuestions, currentQuestionIndex 
-const answerButtonElement = document.getElementById('answer-buttons')
-var questions = shuffledQuestions
+let shuffledQuestions, currentQuestionIndex  
+const answerButtonElement = document.querySelector(".btn-grid")
+const questions = shuffledQuestions
 startButton.addEventListener("click", startGame)
 
 
@@ -14,7 +14,8 @@ function startGame () {
      console.log(shuffledQuestions);
      currentQuestionIndex = 0
      console.log(currentQuestionIndex)
-     setNextQuestion ();
+     setNextQuestion ()
+     selectAnswer()
 }
 function showQuestion () {
      questionElement.innerHTML = question[0].question
@@ -26,7 +27,8 @@ function setNextQuestion() {
 }
 
 function selectAnswer () {
-
+    answerButtonElement.innerHTML = question[0].answers
+    console.log(answerButtonElement)
 }
 
 var question = [
