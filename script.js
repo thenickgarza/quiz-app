@@ -1,9 +1,9 @@
 const startButton = document.querySelector(".start-btn")
 const questionContainerElement = document.getElementById(".question-container")
 const questionElement = document.getElementById('question')
-let shuffledQuestions, currentQuestionIndex
+let shuffledQuestions, currentQuestionIndex 
 const answerButtonElement = document.getElementById('answer-buttons')
-
+var questions = shuffledQuestions
 startButton.addEventListener("click", startGame)
 
 
@@ -11,13 +11,14 @@ function startGame () {
      console.log ("started");
      startButton.remove()
      shuffledQuestions = question.sort(() => Math.random() - .5)
-     // console.log(shuffledQuestions);
-     currentQuestionIndex = 0 
+     console.log(shuffledQuestions);
+     currentQuestionIndex = 0
+     console.log(currentQuestionIndex)
      setNextQuestion ();
 }
 function showQuestion () {
-     questionElement.innerHTML = question
-     console.log(shuffledQuestions)
+     questionElement.innerHTML = question[0].question
+     console.log(question)
 }
 
 function setNextQuestion() {
@@ -37,7 +38,34 @@ var question = [
             { text: "test answer 3", correct: false },
             { text: "test answer 4", correct: false}
             ]
-    }
+    },
+    {
+     question: 'test question',
+     answers: [
+         { text: "test answer 1", correct: true },
+         { text: "test ansswer 2", correct: false },
+         { text: "test answer 3", correct: false },
+         { text: "test answer 4", correct: false}
+         ]
+     },
+     {
+          question: 'test question',
+          answers: [
+              { text: "test answer 1", correct: true },
+              { text: "test ansswer 2", correct: false },
+              { text: "test answer 3", correct: false },
+              { text: "test answer 4", correct: false}
+              ]
+      },
+      {
+          question: 'test question',
+          answers: [
+              { text: "test answer 1", correct: true },
+              { text: "test ansswer 2", correct: false },
+              { text: "test answer 3", correct: false },
+              { text: "test answer 4", correct: false}
+              ]
+      }
 ]
 
 // var score = 0
