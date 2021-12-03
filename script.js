@@ -27,7 +27,7 @@ function setNextQuestion() {
 }
 
 function selectAnswer () {
-    answerButtonElement.innerHTML = question[0].answers
+    answerButtonElement.innerHTML = question[0].answers[0].text
     console.log(answerButtonElement)
 }
 
